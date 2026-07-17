@@ -906,7 +906,7 @@ def test_router_case_sampling():
     assert "units" in d["interfaces"]["ae0"]
     assert 2220 in d["interfaces"]["ae0"]["units"]
     assert "families" in d["interfaces"]["ae0"]["units"][2220]
-    assert "inet"in d["interfaces"]["ae0"]["units"][2220]["families"]
+    assert "inet" in d["interfaces"]["ae0"]["units"][2220]["families"]
     assert not "sampling" in d["interfaces"]["ae0"]["units"][2220]["families"]["inet"]
 
     assert 101 in d["interfaces"]["ae0"]["units"]
@@ -924,8 +924,7 @@ def test_router_case_sampling():
     assert "sampling" in d["interfaces"]["ae0"]["units"][159]["families"]["inet6"]
     assert d["interfaces"]["ae0"]["units"][159]["families"]["inet"]["sampling"] == True
     assert d["interfaces"]["ae0"]["units"][159]["families"]["inet6"]["sampling"] == True
-    
-    
+
     assert "fxp0" in d["interfaces"]
     assert "units" in d["interfaces"]["fxp0"]
     assert 0 in d["interfaces"]["fxp0"]["units"]
@@ -933,7 +932,6 @@ def test_router_case_sampling():
     assert "inet" in d["interfaces"]["fxp0"]["units"][0]["families"]
     assert not "sampling" in d["interfaces"]["fxp0"]["units"][0]["families"]["inet"]
 
-    
     assert "lo0" in d["interfaces"]
     assert "units" in d["interfaces"]["lo0"]
     assert 0 in d["interfaces"]["lo0"]["units"]
@@ -942,6 +940,7 @@ def test_router_case_sampling():
     assert "inet6" in d["interfaces"]["lo0"]["units"][0]["families"]
     assert not "sampling" in d["interfaces"]["lo0"]["units"][0]["families"]["inet"]
     assert not "sampling" in d["interfaces"]["lo0"]["units"][0]["families"]["inet6"]
+
 
 def test_router_isis():
     [sd] = get_router_sd_from_path("./test_case_isis.yaml")

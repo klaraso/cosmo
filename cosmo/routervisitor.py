@@ -204,7 +204,12 @@ class RouterDeviceExporterVisitor(AbstractRouterExporterVisitor, TVRFHelpers):
             parent_interface.getVRF() == None
             and not manufacturer.isManagementInterface(parent_interface)
             and not parent_interface.isLoopbackOrParentIsLoopback()
-            and not any([t.getTagName() == "disable_sampling" for t in parent_interface.getTags()])
+            and not any(
+                [
+                    t.getTagName() == "disable_sampling"
+                    for t in parent_interface.getTags()
+                ]
+            )
         ):
             sampling = {"sampling": True}
         return {
